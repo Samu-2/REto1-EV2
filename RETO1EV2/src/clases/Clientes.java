@@ -29,8 +29,20 @@ public void setListaCompras(HashMap<Tienda, List<Producto>> listaCompras) {
 
 //METODOS
 
-public void comprarProducto(List<Producto> listaCompras, int IDE ) {
-	
+public void comprarProducto(Tienda tienda, int id ) {
+	System.out.println(tienda.getListaProductos());
+	/*
+	for (Map.Entry<keyType, valType> entry : map.entrySet()) {
+		keyType key = entry.getKey();
+		valType val = entry.getValue();
+		
+	}
+	for (Producto producto :tienda.getListaProductos() ) {
+		if (producto.getId()==id) {
+			listaCompras.put(tienda,producto);
+			
+		}
+	}
 }
 
 public double gastoTotal(List<Producto> listaCompras) {
@@ -39,10 +51,11 @@ public double gastoTotal(List<Producto> listaCompras) {
 	for (Producto producto : listaCompras) {
 		
 		
-		gastoTotal +=precio;
+		//gastoTotal +=precio;
 		
 	}
 }
- 
+ */
 
+}
 }

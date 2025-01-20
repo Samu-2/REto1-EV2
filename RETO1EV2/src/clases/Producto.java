@@ -1,10 +1,8 @@
 package clases;
 
-<<<<<<< HEAD
 import util.Funciones;
-=======
 import java.util.List;
->>>>>>> branch 'main' of https://github.com/Samu-2/REto1-EV2.git
+
 
 public class Producto {
 private int id;
