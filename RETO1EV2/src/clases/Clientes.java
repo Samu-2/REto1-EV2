@@ -9,6 +9,10 @@ private String nombre;
 private HashMap<Tienda, List<Producto> > listaCompras;
 
 
+public Clientes(String nombre) {
+	super();
+	this.nombre = nombre;
+}
 public String getNombre() {
 	return nombre;
 }
