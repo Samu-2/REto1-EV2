@@ -7,14 +7,18 @@ private double sueldo;
 
 
 
+@Override
+public String toString() {
+	return "nombre=" + nombre + ", antiguedad=" + antiguedad + ", sueldo=" + sueldo;
+}
 public Empleado() {
 	super();
 }
-public Empleado(String nombre, int antiguedad, double sueldo) {
+public Empleado(String nombre, int antiguedad) {
 	super();
 	this.nombre = nombre;
 	this.antiguedad = antiguedad;
-	this.sueldo = sueldo;
+	
 }
 public String getNombre() {
 	return nombre;
@@ -33,6 +37,18 @@ public double getSueldo() {
 }
 public void setSueldo(double sueldo) {
 	this.sueldo = sueldo;
+}
+public void sueldo() {
+	
+	if(antiguedad<5) {
+		sueldo=1000;
+	}
+	if(antiguedad>6&&antiguedad<10) {
+		sueldo=1200;
+	}
+	if(antiguedad>=10) {
+		sueldo=1500;
+	}
 }
 
 }
