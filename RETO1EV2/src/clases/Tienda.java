@@ -45,6 +45,7 @@ public List<Producto> getListaProductos() {
 public void setListaProductos(List<Producto> listaProductos) {
 	this.listaProductos = listaProductos;
 }
+public void venderProducto (listaProductos)
 
 
 }
