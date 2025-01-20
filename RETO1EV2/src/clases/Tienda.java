@@ -16,12 +16,12 @@ public class Tienda {
 		super();
 	}
 
-	public Tienda(int codigo, String nombre, Empleado gerente, List<Producto> listaProductos) {
+	public Tienda(int codigo, String nombre, Empleado gerente,List<Producto>listaProductos) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.gerente = gerente;
-		this.listaProductos = listaProductos;
+		this.listaProductos=listaProductos;
 	}
 
 	public int getCodigo() {
@@ -66,12 +66,12 @@ public class Tienda {
 		}
 		if (listaProductos.size() < 5) {
 
-			Funciones1.generarProductos(listaProductos);
+			Funciones1.generarProductos2(listaProductos);
 
 		}
 	}
 
-	public void reponer(List<Producto> listaProductos,int numProductos) {
+	public void reponer(List<Producto> listaProductos, int numProductos) {
 		Random r = new Random();
 		List<Producto> lista = new ArrayList<Producto>();
 		for (int i = 1; i <= numProductos; i++) {
@@ -87,6 +87,12 @@ public class Tienda {
 			valor += (producto.getPrecio());
 
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "Tienda [codigo=" + codigo + ", nombre=" + nombre + ", gerente=" + gerente + ", listaProductos="
+				+ listaProductos + "]";
 	}
 
 }

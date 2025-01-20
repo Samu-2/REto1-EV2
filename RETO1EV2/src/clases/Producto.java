@@ -1,6 +1,10 @@
 package clases;
 
+<<<<<<< HEAD
 import util.Funciones;
+=======
+import java.util.List;
+>>>>>>> branch 'main' of https://github.com/Samu-2/REto1-EV2.git
 
 public class Producto {
 private int id;
@@ -34,6 +38,14 @@ public double getPrecio() {
 }
 public void setPrecio(double precio) {
 	this.precio = precio;
+}
+public void addProducto ( Producto id,List<Producto>lista) {
+	lista.add(id);
+	
+}
+@Override
+public String toString() {
+	return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]";
 }
 
 

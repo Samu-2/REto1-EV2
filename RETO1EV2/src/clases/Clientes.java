@@ -35,7 +35,7 @@ public void comprarProducto(List<Producto> listaCompras, int IDE ) {
 
 public double gastoTotal(List<Producto> listaCompras) {
 	int gastoTotal;
-	listaCompras.get
+	//listaCompras.get
 	for (Producto producto : listaCompras) {
 		
 		
