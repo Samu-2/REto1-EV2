@@ -33,7 +33,7 @@ public class proyecto {
 
 		} while (opcion != 0);
 		
-		
+		System.out.println("pepe");
 
 	}
 
