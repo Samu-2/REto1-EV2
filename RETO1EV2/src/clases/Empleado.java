@@ -9,7 +9,7 @@ private double sueldo;
 
 @Override
 public String toString() {
-	return "nombre=" + nombre + ", antiguedad=" + antiguedad + ", sueldo=" + sueldo;
+	return  nombre + ", antiguedad=" + antiguedad + ", sueldo=" + sueldo;
 }
 public Empleado() {
 	super();
@@ -18,6 +18,8 @@ public Empleado(String nombre, int antiguedad) {
 	super();
 	this.nombre = nombre;
 	this.antiguedad = antiguedad;
+	calcularSueldo();
+
 	
 }
 public String getNombre() {
@@ -31,6 +33,7 @@ public int getAntiguedad() {
 }
 public void setAntiguedad(int antiguedad) {
 	this.antiguedad = antiguedad;
+	calcularSueldo();
 }
 public double getSueldo() {
 	return sueldo;
@@ -38,7 +41,7 @@ public double getSueldo() {
 public void setSueldo(double sueldo) {
 	this.sueldo = sueldo;
 }
-public void sueldo() {
+public void calcularSueldo() {
 	
 	if(antiguedad<5) {
 		sueldo=1000;
