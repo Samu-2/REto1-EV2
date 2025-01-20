@@ -1,5 +1,7 @@
 package clases;
 
+import util.Funciones;
+
 public class Producto {
 private int id;
 private String nombre;
@@ -34,4 +36,7 @@ public void setPrecio(double precio) {
 	this.precio = precio;
 }
 
+
 }
+
+
