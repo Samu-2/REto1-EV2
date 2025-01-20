@@ -1,6 +1,8 @@
 package clases;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import ejercicio.Funciones1;
 
@@ -69,8 +71,22 @@ public class Tienda {
 		}
 	}
 
-	public void reponer(List<Producto> listaProductos) {
+	public void reponer(List<Producto> listaProductos,int numProductos) {
+		Random r = new Random();
+		List<Producto> lista = new ArrayList<Producto>();
+		for (int i = 1; i <= numProductos; i++) {
+			double precio = Math.ceil(r.nextDouble(10, 101));
+			String nombre = "producto" + i;
+			Producto producto = new Producto(i, nombre, precio);
+			System.out.println(producto);
+			lista.add(producto);
 
+		}
+		double valor = 0;
+		for (Producto producto : lista) {
+			valor += (producto.getPrecio());
+
+		}
 	}
 
 }
