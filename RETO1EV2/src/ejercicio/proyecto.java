@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import clases.Clientes;
 import clases.Empleado;
 import clases.Producto;
 import clases.Tienda;
@@ -13,6 +14,9 @@ public class proyecto {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+
+		String nombre2 = "Daniel";
+		Clientes miCliente = new Clientes (nombre2);	
 		List<Producto> listaProductos = generarProductos();
 
 		Random r = new Random();
@@ -36,6 +40,7 @@ public class proyecto {
 
 				break;
 			case 2:
+				int codigoProducto;
 				int codigo;
 				mostrarlistaTiendas(listaProductos, listaEmpleados, nombre);
 				List<Tienda> listaDeTiendas = listaTiendas(listaProductos, listaEmpleados, nombre);
@@ -45,7 +50,13 @@ public class proyecto {
 				do {
 					codigo = util.Funciones.dimeEntero("Introduce un codigo para elegir la tienda", sc);
 				} while (verficarCodigo(codigo, listaDeTiendas)==false);
-		
+			Tienda tiendaElegida =	devolverTienda(codigo, listaDeTiendas);
+		System.out.println(tiendaElegida.getListaProductos());	
+		List<Producto> listaProductosComprados = new ArrayList<Producto>();
+				 codigoProducto = util.Funciones.dimeEntero("Introduce un codigo para elegir producto", sc);
+				 
+				 miCliente.comprarProducto(tiendaElegida,listaProductosComprados , codigoProducto);
+				 tiendaElegida.venderProducto(tiendaElegida.getListaProductos(), codigoProducto);
 				break;
 			case 3:
 
@@ -132,6 +143,17 @@ public class proyecto {
 			}
 		}
 			return false;
+		
+	}
+	
+	public static Tienda  devolverTienda (int codigo, List<Tienda> tienda) {
+		for (Tienda tienda2 : tienda) {
+			if (tienda2.getCodigo()==codigo) {
+				return tienda2;
+			}
+		}
+		return null;
+
 		
 	}
 }
