@@ -34,14 +34,15 @@ public void comprarProducto(List<Producto> listaCompras, int IDE ) {
 }
 
 public double gastoTotal(List<Producto> listaCompras) {
-	int gastoTotal;
+double gastoTotal=0;
 	//listaCompras.get
 	for (Producto producto : listaCompras) {
 		
 		
-		gastoTotal +=precio;
+		gastoTotal +=producto.getPrecio();
 		
 	}
+	return gastoTotal;
 }
  
 
