@@ -31,17 +31,21 @@ public class proyecto {
 			opcion = util.Funciones.dimeEntero("Introduce una opcion ", sc);
 			switch (opcion) {
 			case 1:
-			
-
-				for (int i = 1; i <= 5; i++) {
-					Empleado empleado = listaEmpleados.get(i);
-					Tienda tienda = new Tienda(i, nombre + i, empleado, listaProductos);
-					System.out.println(tienda);
-				}
+		
+				mostrarlistaTiendas(listaProductos, listaEmpleados, nombre);
 
 				break;
 			case 2:
-
+				int codigo;
+				mostrarlistaTiendas(listaProductos, listaEmpleados, nombre);
+				List<Tienda> listaDeTiendas = listaTiendas(listaProductos, listaEmpleados, nombre);
+			
+				listaTiendas(listaProductos, listaEmpleados, nombre);
+				
+				do {
+					codigo = util.Funciones.dimeEntero("Introduce un codigo para elegir la tienda", sc);
+				} while (verficarCodigo(codigo, listaDeTiendas)==false);
+		
 				break;
 			case 3:
 
@@ -60,6 +64,22 @@ public class proyecto {
 
 	}
 
+	private static void mostrarlistaTiendas(List<Producto> listaProductos, List<Empleado> listaEmpleados, String nombre) {
+		for (int i = 1; i <= 5; i++) {
+			Empleado empleado = listaEmpleados.get(i);
+			Tienda tienda = new Tienda(i, nombre + i, empleado, listaProductos);
+			System.out.println(tienda);
+		}
+	}
+	private static List<Tienda>listaTiendas(List<Producto> listaProductos, List<Empleado> listaEmpleados, String nombre) {
+		List<Tienda>listaTiendas = new ArrayList<Tienda>();
+		for (int i = 1; i <= 5; i++) {
+			Empleado empleado = listaEmpleados.get(i);
+			Tienda tienda = new Tienda(i, nombre + i, empleado, listaProductos);
+			
+			listaTiendas.add(tienda);
+		}return listaTiendas;
+	}
 	public static void muestraListaTienda(List<Empleado> list) {
 		for (int i = 0; i < list.size(); i++) {
 			System.out.print(i == 0 ? list.get(i) : ", " + list.get(i));
@@ -103,5 +123,15 @@ public class proyecto {
 
 		}
 
+	}
+	
+	public static boolean verficarCodigo (int codigo, List<Tienda> tienda) {
+		for (Tienda tienda2 : tienda) {
+			if (tienda2.getCodigo()==codigo) {
+				return true;
+			}
+		}
+			return false;
+		
 	}
 }
