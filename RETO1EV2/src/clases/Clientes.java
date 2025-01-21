@@ -41,13 +41,11 @@ public class Clientes {
 				List<Producto> val = entry.getValue();
 				if (key.equals(t1)) {
 					// t1.venderProducto(listaProducto1, IDE);
-					listaCompras.put(t1, listaProducto1);
+
 				}
 			}
-		}else {
-				listaCompras.put(t1, listaProducto1);
-		}
-	
+		}else
+		listaCompras.put(t1, listaProducto1);
 	}
 
 	public double gastoTotal(List<Producto> listaCompras) {
