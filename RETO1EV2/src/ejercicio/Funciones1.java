@@ -23,10 +23,11 @@ public class Funciones1 {
 
 		}
 		String nombre = "Nombre";
+	
 		for (int i = 1; i <= 5; i++) {
 			Empleado empleado = listaEmpleados.get(i);
 			Tienda tienda = new Tienda(i, nombre + i, empleado, listaProductos);
-			System.out.println(tienda);
+	System.out.println(tienda);
 		}
 
 	}
