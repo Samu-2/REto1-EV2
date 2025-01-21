@@ -9,7 +9,7 @@ public class Funciones3 {
 
 	public static void main(String[] args) {
 		generarEmpleados();
-
+System.out.println("hola");
 	}
 	public static void generarEmpleados() {
 		Scanner sc=new Scanner(System.in);
